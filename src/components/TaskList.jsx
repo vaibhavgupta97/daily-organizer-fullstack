@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import {requestTaskCreation} from "react-redux";
 export const TaskList =({tasks,name,id,createNewTask})=>(
     <div>
         <h3>{name}</h3>
@@ -20,6 +21,7 @@ const mapDispatchToProps=(dispatch,ownProps)=>{
     return{
         createNewTask(id){
             console.log("creating task", id)
+            dispatch(requestTaskCreation(id));
         }
     }
 }
